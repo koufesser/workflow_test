@@ -1,0 +1,9 @@
+1 = replace fantasy good
+2 = writefile C:\Users\Work\CLionProjects\untitled\example1.out
+4 = readfile C:\Users\Work\CLionProjects\untitled\example1.in
+5 = sort
+6 = grep wizard
+7 = synch
+end
+4->5->1->7->2
+4->5->6->2
