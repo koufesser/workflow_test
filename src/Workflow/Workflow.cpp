@@ -2,7 +2,7 @@
 
 void Workflow::initialize() {
     std::string fword, equals_symbol, command;
-    std::ifstream infile(R"(C:\Users\Work\CLionProjects\untitled\tasks)");
+    std::ifstream infile(task_file);
     while ((infile >> fword) && fword != "end") {
         int id = std::stoi(fword);
         infile >> equals_symbol >> command;

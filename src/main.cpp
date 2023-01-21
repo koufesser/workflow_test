@@ -8,7 +8,7 @@ void test() {
 }
 
 int main() {
-    Workflow w;
+    Workflow w(R"(C:\Users\Work\CLionProjects\untitled\tasks)");
     w.initialize();
     w.run();
     return 0;

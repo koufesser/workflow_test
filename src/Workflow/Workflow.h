@@ -11,9 +11,12 @@
 #include <mutex>
 #include <unistd.h>
 #include <thread>
+#include <utility>
 #include "workflow_functions.h"
 
 struct Workflow {
+
+    explicit Workflow(std::string task_file_) : task_file(std::move(task_file_)) {}
 
     enum Task {
         readfile, writefile, grep, sort, replace, synch
@@ -27,7 +30,7 @@ struct Workflow {
             {"replace",   Task::replace},
             {"synch",     Task::synch}
     };
-
+    std::string task_file;
     std::vector<std::string> command_chains;
     std::unordered_map<int, std::function<void(std::string &)>> text_commands;
     std::unordered_set<int> sync_commands;
